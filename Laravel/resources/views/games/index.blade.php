@@ -11,9 +11,11 @@
 <ul>
     @foreach($games as $game)
         <li>
-            <a href="/games/{{ $game->id }}">
+
                 {{ $game->name }}
-            </a>
+            <a href="/games/{{ $game->id }}">
+            <img src="{{ asset( $game->image ) }}" height="200px"/>
+                </a>
         </li>
     @endforeach
 </ul>
