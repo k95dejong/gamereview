@@ -1,24 +1,17 @@
-<!DOCTYPE HTML>
-<html lang = "en">
-<head>
-    <meta charset = "UTF-8" />
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.default')
+@section('content')
 
-<h1>Game Overview</h1>
+    <h1>Game Overview</h1>
 
-<ul>
-    @foreach($games as $game)
-        <li>
-
+    <ul>
+        @foreach($games as $game)
+            <li>
                 {{ $game->name }}
-            <a href="/games/{{ $game->id }}">
-            <img src="{{ asset( $game->image ) }}" height="200px"/>
+                <a href="/games/{{ $game->id }}">
+                    <img src="{{ asset( $game->image ) }}" height="200px"/>
                 </a>
-        </li>
-    @endforeach
-</ul>
+            </li>
+        @endforeach
+    </ul>
 
-</body>
-</html>
+@stop
